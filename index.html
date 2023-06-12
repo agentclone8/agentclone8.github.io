@@ -7,31 +7,41 @@
                 font-family: Arial, sans-serif;
                 margin: 0;
                 padding: 0;
-                background-color: #f0f0f0;
+                background-color: #fff;
+                color: #000;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
             }
             h1 {
-                color: #333;
+                color: #000;
+                background-color: #add8e6;
+                padding: 20px;
+                width: 100%;
                 text-align: center;
-                padding: 20px 0;
-                background-color: #ff9800;
             }
             h2 {
-                color: #ff9800;
+                color: #000;
             }
             p {
-                color: #333;
-                margin: 0 20px 20px 20px;
+                color: #000;
+                text-align: center;
             }
             a {
-                color: #ff9800;
+                color: #000;
                 text-decoration: none;
             }
             a:hover {
-                text-decoration: underline;
+                color: #add8e6;
             }
             ul {
                 list-style-type: none;
                 padding: 0;
+                text-align: center;
             }
             li {
                 padding: 5px 0;
@@ -39,16 +49,18 @@
         </style>
     </head>
     <body>
-        <h1>Welcome to My Portfolio</h1>
-        <p>My name is Samuel Gerkin. I am a programmer.</p>
-        <h2>My Works</h2>
-        <ul>
-            <li><a href="#project1">Project 1</a></li>
-            <li><a href="#project2">Project 2</a></li>
-        </ul>
-        <h2 id="project1">Project 1</h2>
-        <p>Description of Project 1</p>
-        <h2 id="project2">Project 2</h2>
-        <p>Description of Project 2</p>
+        <div class="container">
+            <h1>Welcome to Samuel Gerkin's Portfolio</h1>
+            <p>Hi, I'm Samuel Gerkin. I am a programmer.</p>
+            <h2>My Works</h2>
+            <ul>
+                <li><a href="#project1">Project 1</a></li>
+                <li><a href="#project2">Project 2</a></li>
+            </ul>
+            <h2 id="project1">Project 1</h2>
+            <p>Description of Project 1</p>
+            <h2 id="project2">Project 2</h2>
+            <p>Description of Project 2</p>
+        </div>
     </body>
 </html>
