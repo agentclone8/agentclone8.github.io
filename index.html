@@ -1,66 +1,195 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Samuel Gerkin Portfolio</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #fff;
-                color: #000;
-            }
-            .container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 20px;
-            }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Gerkin - Game Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            background: white;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            margin-top: 15px;
+        }
+
+        .contact a {
+            color: #0066cc;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .project {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .project h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .project p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #0052a3;
+        }
+
+        .btn-secondary {
+            background: #666;
+        }
+
+        .btn-secondary:hover {
+            background: #444;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
             h1 {
-                color: #000;
-                background-color: #add8e6;
+                font-size: 2em;
+            }
+            
+            .project {
                 padding: 20px;
-                width: 100%;
-                text-align: center;
             }
-            h2 {
-                color: #000;
-            }
-            p {
-                color: #000;
-                text-align: center;
-            }
-            a {
-                color: #000;
-                text-decoration: none;
-            }
-            a:hover {
-                color: #add8e6;
-            }
-            ul {
-                list-style-type: none;
-                padding: 0;
-                text-align: center;
-            }
-            li {
-                padding: 5px 0;
-            }
-        </style>
-    </head>
-    <body>
+        }
+    </style>
+</head>
+<body>
+    <header>
         <div class="container">
-            <h1>Welcome to Samuel Gerkin's Portfolio</h1>
-            <p>Hi, I'm Samuel Gerkin. I am a programmer.</p>
-            <h2>My Works</h2>
-            <ul>
-                <li><a href="#project1">Project 1</a></li>
-                <li><a href="#project2">Project 2</a></li>
-            </ul>
-            <h2 id="project1">Project 1</h2>
-            <p>Description of Project 1</p>
-            <h2 id="project2">Project 2</h2>
-            <p>Description of Project 2</p>
+            <h1>Samuel Gerkin</h1>
+            <p class="subtitle">Game Developer & Graphics Programmer</p>
+            <div class="contact">
+                <a href="mailto:samuelgerkin@gmail.com">samuelgerkin@gmail.com</a>
+            </div>
         </div>
-    </body>
+    </header>
+
+    <div class="container">
+        <div class="project">
+            <h2>Beneath Quiet Streets</h2>
+            <p>A first-person narrative mystery game where a detective investigates a mountain town whose residents have mysteriously vanished. Features knowledge-based progression, custom raytraced audio occlusion, and modular gameplay systems built in Unreal Engine.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/KXhiR3NBidw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="links">
+                <a href="https://samuelgerkin.itch.io/beneath-quiet-streets/download/ePMurLIih9mhf_gbZYVW0LkEMOAi4T0flo6VXRXO" class="btn">Play Demo on itch.io</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Vulkan Ray Tracing Engine</h2>
+            <p>Custom C++ game engine with dynamic toggling between rasterization, hardware ray tracing, and compute BVH ray tracing modes using Vulkan API.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/YOUR_ENGINE_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>YouTube Channel</h2>
+            <p>Technical tutorials on GLSL and graphics programming with over 1 million views, helping developers learn shader fundamentals and advanced rendering techniques.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/RjyNVmsTBmA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="links">
+                <a href="https://www.youtube.com/channel/UCDcPZi5MMrwGz9tg9V7dJUA" class="btn-secondary btn">Visit Channel</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Minecraft Ray Tracing Shader</h2>
+            <p>GLSL-based ray tracing shader with over 100,000 downloads, bringing realistic lighting and reflections to Minecraft.</p>
+            <div class="links">
+                <a href="https://modrinth.com/shader/daybreak-shader" class="btn">Download on Modrinth</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Samuel Gerkin</p>
+    </footer>
+</body>
 </html>
