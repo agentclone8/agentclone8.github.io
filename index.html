@@ -135,13 +135,104 @@
                 padding: 20px;
             }
         }
+        .gallery {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .gallery h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .gallery p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            font-weight: 500;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
         @media (prefers-color-scheme: dark) {
             body {
                 background: #1a1a1a;
                 color: #ffffff;
             }
             
-            header, .project {
+            header, .project, .gallery {
                 background: #2a2a2a;
             }
             
@@ -149,7 +240,7 @@
                 color: #b0b0b0;
             }
             
-            .project p {
+            .project p, .gallery p {
                 color: #ffffff;
             }
             
@@ -216,7 +307,125 @@
                 <a href="https://modrinth.com/shader/daybreak-shader" class="btn">Download on Modrinth</a>
             </div>
         </div>
+
+        <div class="gallery">
+            <h2>3D Models</h2>
+            <p>3D models I've created!</p>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20161519.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20194528.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20194632.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20194801.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20194840.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20194913.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20194945.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195024.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195053.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195136.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195200.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195222.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195247.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195744.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195801.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195819.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195846.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195909.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20195950.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20210616.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20210748.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20210853.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20211108.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20211130.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20211146.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20211753.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20211846.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20212412.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20212841.png" alt="3D Model">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3d-models/Screenshot%202025-12-17%20212911.png" alt="3D Model">
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
 
     <footer>
         <p>&copy; 2025 Samuel Gerkin</p>
