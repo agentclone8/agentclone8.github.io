@@ -57,6 +57,44 @@
             text-decoration: underline;
         }
 
+        .resume-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 22px;
+            padding: 10px 14px;
+            border: 1px solid #d7e3f3;
+            border-radius: 6px;
+            background: #f8fbff;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .resume-link span {
+            color: #444;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+
+        .resume-link a {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background: #70757d;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.82em;
+            line-height: 1.2;
+            transition: background 0.3s;
+        }
+
+        .resume-link a:hover {
+            background: #5d636b;
+            text-decoration: none;
+        }
+
         .project {
             background: white;
             padding: 30px;
@@ -129,6 +167,11 @@
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
+            }
+
+            .resume-link {
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             .project {
@@ -235,6 +278,16 @@
             header, .project, .gallery {
                 background: #2a2a2a;
             }
+
+            .resume-link {
+                background: #222;
+                border-color: #444;
+                color: #ffffff;
+            }
+
+            .resume-link span {
+                color: #d5d5d5;
+            }
             
             .subtitle, footer {
                 color: #b0b0b0;
@@ -257,6 +310,11 @@
             <p class="subtitle">Game Developer & Graphics Programmer</p>
             <div class="contact">
                 <a href="mailto:samuelgerkin@gmail.com">samuelgerkin@gmail.com</a>
+            </div>
+            <div class="resume-link" aria-label="Resume links">
+                <span>Resume:</span>
+                <a href="Resume_Samuel_Gerkin.pdf" target="_blank" rel="noopener">View</a>
+                <a href="Resume_Samuel_Gerkin.pdf" download>Download PDF</a>
             </div>
         </div>
     </header>
