@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beneath Quiet Streets - HTML Edition</title>
+  <style>
+    body{
+        font-family: system-ui, Segoe UI, Arial;
+        max-width: 832px;
+        box-sizing: border-box;
+        margin: 40px auto;
+        line-height: 1.5;
+        font-size: 17px;                 /* bump up text size */
+        background-color: #f8f4e3;       /* soft yellow-paper color */
+        color: #333;                     /* comfortable dark text */
+        padding: 0 16px;
+        }
+
+    .back{font-size:15px}
+    .back a{color:#555}
+
+    .page{display:none}
+    .page.active{display:block}
+    img.inline{max-width:100%;height:auto;display:block;margin:12px 0}
+    .nav{margin-top:18px}
+  </style>
+</head>
+<body>
+  <p class="back"><a href="../writing.html">&larr; Back to portfolio</a></p>
+  <h1>Beneath Quiet Streets</h1>
+
+  <div id="page1" class="page active">
+    <div style="white-space: pre-line;">
+        This text appears on a black screen on game start:
+
+
+        Detective,
+        I know it’s out of the ordinary, but the small town of Cedar Valley needs your expertise. Their Sheriff’s office has been overwhelmed by a string of missing persons and possible homicides.
+
+        Most recently, a real estate acquisitions man named Max Alden was found dead in his penthouse. Apparently neighbors later reported hearing five gunshots the night before, but their guys haven’t found any bullet holes, and the death seemed to be due to blunt trauma to the head on their initial inspection. This is only the latest in an ever growing string of missing persons and unexplained deaths, which may or may not be related.
+
+        You are to start by meeting the Sheriff at the Diner at the edge of town. Conduct a thorough investigation into Max Alden’s death and any other suspicious activities related to these cases, and report back with your findings. Good luck.
+
+
+        The game starts. You are a detective, standing near a car on the outskirts of town, having just driven in.
+
+        The small town is in a valley surrounded by tall mountains. A large wheat field is behind you along the winding two lane road. The diner is ahead.
+
+    <img class="inline" src="Files/BQS_CoverPhoto.jpg" alt="">
+        On a streetlight nearby is posted:
+    <a href="Files/MissingPoster_JohnAcres.png" target="_blank">Missing Poster</a>
+        
+  </div>
+    <div class="nav">
+      <button onclick="show('page2')">Enter the Diner →</button>
+    </div>
+  </div>
+
+  <div id="page2" class="page">
+    <div style="white-space: pre-line;">
+        You approach the diner. A song plays faintly from inside, swelling as you enter.
+    <audio controls src="Files/DinerMusicLoopOnce.mp3" preload="none" style="width: 300px; display:block; margin:12px 0;"></audio>
+        A jukebox is in the corner, playing the song.
+
+        You walk up to the counter. There's a freshly poured cup of coffee on the counter, but you don't see anyone else in the diner.
+
+        You ring the bell on the counter a few times.
+
+        No answer.
+
+        Suddenly, the music from the jukebox cuts, and morse code begins playing out of the jukebox.
+
+        Glancing around the diner, you see a morse code decoder paper on a chair. You pick it up and decode the message.
+    <a href="Files/MorseCodeLearnPaper2.png" target="_blank">Decoder Paper</a>
+
+        It reads:
+
+        W E A R E S T I L L A L I V E
+
+        The morse code stops playing. Silence, besides a few creaks from the building. Or is someone upstairs?
+
+        You walk upstairs to see if anyone is there. The door on the stairway is locked. A sticky note next to it says:
+        "Key in register!"
+
+        You go back downstairs. A cash register on the counter needs a 6 digit code to open. The screen displays "Ellie's Diner"
+    </div>
+    <div class="nav">
+      <button onclick="show('page1')">← Back</button>
+      <button onclick="show('page3')">Search the Diner →</button>
+    </div>
+  </div>
+
+  <div id="page3" class="page">
+    <div style="white-space: pre-line;">
+      Looking around the diner again, you see a calendar on the wall inside the kitchen:
+    <a href="Files/JulyCalendar.png" target="_blank">Calendar</a>
+        
+      On the counter next to the coffee, you see a cell phone. There's also a small paper note on the seat nearby:
+    <a href="Files/MrsAcresNote.png" target="_blank">Note next to coffee</a>
+
+      You pick up the phone:
+    <a href="Files/Sheriff'sPhone.pdf" target="_blank">Phone on counter</a>
+
+      You also find a phone on a diner table next to where you found the morse code paper:
+    <a href="Files/Sandra'sPhoneMinusNotes.pdf" target="_blank">Phone on table</a>
+
+      Can you use this information to guess the 6-digit code to the cash register?
+
+    
+    </div>
+    <label for="code3" style="display:block; margin:12px 0 6px;">Can you guess the code?</label>
+    <input id="code3" type="password" inputmode="numeric" autocomplete="off" style="padding:6px; font-size:18px;">
+    <button onclick="checkCode3()" style="margin-left:8px;">Submit</button>
+    <span id="codeMsg3" style="margin-left:8px; color:#b00; display:none;">Incorrect</span>
+
+    <div class="nav">
+      <button onclick="show('page2')">← Back</button>
+      <button id="next3" onclick="show('page4')" style="display:none">Pick up the key in the register →</button>
+    </div>
+
+  </div>
+
+  <div id="page4" class="page">
+    <div style="white-space: pre-line;">
+      You grab the key, head upstairs, and unlock the door.
+
+      The upstairs floor is a small apartment. There's a couch with a small table with a chessboard on it, a bed, and a small radio.
+
+      On the bedside table is a diary:
+    <a href="Files/Eleanor'sDiary.pdf" target="_blank">Diary</a>
+
+      Suddenly, another morse code message begins playing on the radio.
+      You pick up the decoder paper and decode it:
+
+      S O M E T H I N G G O T O U T
+
+      Unnerved by the last page of the diary and the message, you peek out the front window.
+
+      A tall figure stands in the dark under the streetlight, watching you. You can't make out any features.
+
+      You run downstairs and out the diner door to where the figure was standing, but it is gone.
+
+      Remembering one of the messages from Sandra's phone, you look around the couch upstairs. There's a keycard:
+    <a href="Files/Card_Diff_Stratton-Hale.png" target="_blank">Keycard</a>
+
+      You pocket the keycard.
+    </div>
+    <div class="nav">
+      <button onclick="show('page3')">← Back</button>
+      <button onclick="show('page5')">Piece together the remaining clues →</button>
+    </div>
+  </div>
+
+  <div id="page5" class="page">
+    <div style="white-space: pre-line;">
+      You remember the sheriff's phone had a text with instructions. You follow them out into the dark.
+
+      The instructions lead you to the middle of the wheat field. In between rows of wheat, you find a disturbed patch of dirt.
+
+      You'll need a shovel to dig it up. Sandra's phone said something about a shovel. But not the location.
+
+      Then you remember, Eleanor's diary mentioned her burying her pet fish under a tree behind the diner. Perhaps she forgot the shovel there?
+
+      You search in the woods behind the diner, your flashlight barely penetrating the darkness.
+
+      Finally, you find the shovel next to a small, simple grave.
+
+      You pick up the shovel and return to the wheat field.
+
+      Under the disturbed dirt, you find half of a dumbell covered in blood. 
+
+
+      Remembering a final clue, you remember that Sandra's phone mentioned "chess" as a password hint.
+
+      You return to the diner and look at the chessboard upstairs. The pawns, in order of letter, give a 4 digit code.
+
+      Entering it into Sandra's phone, you unlock the notes:
+      <a href="Files/Sandra'sPhoneNotes.pdf" target="_blank">Sandra's Notes</a>
+
+      You haven't found all the evidence yet, but what do you suspect happened to Max Alden?
+        
+    </div>
+  </div>
+
+  <script>
+    function show(id){
+      document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function checkCode3(){
+      const ok = document.getElementById('code3').value.trim() === '072078'; // change code here
+      const msg = document.getElementById('codeMsg3');
+      msg.textContent = ok ? 'Correct' : 'Incorrect';
+      msg.style.color = ok ? '#0a0' : '#b00';
+      msg.style.display = 'inline';
+      if (ok) {
+        document.getElementById('next3').style.display = 'inline-block';
+        document.getElementById('code3').disabled = true;
+      }
+    }
+  </script>
+</body>
+</html>

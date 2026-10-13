@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Gerkin - Narrative Design &amp; Writing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            background: white;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            margin-top: 15px;
+        }
+
+        .contact a {
+            color: #0066cc;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .resume-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 22px;
+            padding: 10px 14px;
+            border: 1px solid #d7e3f3;
+            border-radius: 6px;
+            background: #f8fbff;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .resume-link span {
+            color: #444;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+        .resume-link a {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background: #70757d;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.82em;
+            line-height: 1.2;
+            transition: background 0.3s;
+        }
+
+        .resume-link a:hover {
+            background: #5d636b;
+            text-decoration: none;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 28px;
+        }
+
+        .tabs a {
+            padding: 8px 18px;
+            border-radius: 20px;
+            color: #555;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #ddd;
+        }
+
+        .tabs a:hover {
+            border-color: #0066cc;
+            color: #0066cc;
+        }
+
+        .tabs a.active {
+            background: #0066cc;
+            border-color: #0066cc;
+            color: white;
+        }
+
+        .project {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .project h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .project h3 {
+            font-size: 1.15em;
+            margin: 25px 0 10px;
+            font-weight: 600;
+        }
+
+        .project p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .project ul {
+            color: #555;
+            margin: 0 0 20px 22px;
+        }
+
+        .project li {
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            font-style: italic;
+        }
+
+        .cover {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #0052a3;
+        }
+
+        .btn-secondary {
+            background: #666;
+        }
+
+        .btn-secondary:hover {
+            background: #444;
+        }
+
+        /* Screenplay excerpt, laid out like a script page */
+        .script {
+            font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+            font-size: 0.95em;
+            line-height: 1.45;
+            background: #fdfcf8;
+            color: #222;
+            border: 1px solid #e4e0d4;
+            border-radius: 4px;
+            padding: 30px 8%;
+            margin-bottom: 20px;
+        }
+
+        .script .slug {
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .script .action {
+            margin-bottom: 18px;
+        }
+
+        .script .character {
+            margin: 0 0 0 30%;
+            text-transform: uppercase;
+        }
+
+        .script .dialogue {
+            margin: 0 18% 16px 15%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #e3e3e3;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .card h3 {
+            margin: 0 0 4px;
+        }
+
+        .meta {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+        }
+
+        /* DRAFT: placeholder content waiting for real titles and PDFs */
+        .placeholder {
+            border: 2px dashed #e0a800;
+            background: #fffbea;
+        }
+
+        .placeholder .meta::before {
+            content: "PLACEHOLDER · ";
+            color: #b07d00;
+            font-weight: 700;
+        }
+
+        .film {
+            padding-top: 25px;
+            margin-top: 25px;
+            border-top: 1px solid #e3e3e3;
+        }
+
+        .film h3 {
+            margin-top: 0;
+        }
+
+        .film .meta {
+            margin-bottom: 10px;
+        }
+
+        .video-slot {
+            aspect-ratio: 16 / 9;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b07d00;
+            font-weight: 600;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skills span {
+            padding: 4px 12px;
+            border-radius: 14px;
+            background: #eef3fa;
+            color: #335;
+            font-size: 0.9em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .resume-link {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .project {
+                padding: 20px;
+            }
+
+            .script {
+                padding: 20px 14px;
+            }
+
+            .script .character {
+                margin-left: 22%;
+            }
+
+            .script .dialogue {
+                margin: 0 4% 16px 8%;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1a1a1a;
+                color: #ffffff;
+            }
+
+            header, .project {
+                background: #2a2a2a;
+            }
+
+            .resume-link {
+                background: #222;
+                border-color: #444;
+                color: #ffffff;
+            }
+
+            .resume-link span {
+                color: #d5d5d5;
+            }
+
+            .subtitle, footer, .meta {
+                color: #b0b0b0;
+            }
+
+            .project p, .project ul {
+                color: #ffffff;
+            }
+
+            .contact a {
+                color: #4da6ff;
+            }
+
+            .tabs a {
+                color: #d5d5d5;
+                border-color: #444;
+            }
+
+            .tabs a:hover {
+                color: #4da6ff;
+                border-color: #4da6ff;
+            }
+
+            .tabs a.active {
+                color: white;
+            }
+
+            .card, .film {
+                border-color: #444;
+            }
+
+            .placeholder {
+                background: #332b10;
+                border-color: #8a6d00;
+            }
+
+            .skills span {
+                background: #34404f;
+                color: #e6eef8;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Samuel Gerkin</h1>
+            <p class="subtitle">Narrative Designer &amp; Screenwriter</p>
+            <div class="contact">
+                <a href="mailto:samuelgerkin@gmail.com">samuelgerkin@gmail.com</a>
+            </div>
+            <div class="resume-link" aria-label="Resume links">
+                <span>Resume:</span>
+                <a href="Resume_Samuel_Gerkin.pdf" target="_blank" rel="noopener">View</a>
+                <a href="Resume_Samuel_Gerkin.pdf" download>Download PDF</a>
+            </div>
+            <nav class="tabs" aria-label="Portfolio sections">
+                <a href="index.html">Programming</a>
+                <a href="writing.html" class="active" aria-current="page">Narrative and Writing</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="project">
+            <h2>Beneath Quiet Streets</h2>
+            <p class="tagline">First-person narrative mystery game in Unreal Engine featuring a knowledge-based investigation system.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/KXhiR3NBidw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p>A detective called to a remote mountain town finds all the inhabitants have vanished. Explore a player-driven narrative investigation where the game is the mystery &ndash; every clue you collect and connection you make shapes how your narrative unfolds.</p>
+            <ul>
+                <li><strong>Environmental Storytelling.</strong> The whole narrative is pieced together by the player themselves through what they find in the abandoned town.</li>
+            </ul>
+
+            <h3>Excerpt: the Sheriff's phone</h3>
+            <div class="script" aria-label="Screenplay excerpt">
+                <div class="slug">Sheriff's phone</div>
+                <div class="action">Deputy texts</div>
+                <div class="character">Deputy Reed</div>
+                <div class="dialogue">Sheriff, there's been another one. Max Alden, a Property Acquisition Agent for the facility, was found dead in his room, the Penthouse at the hotel.</div>
+                <div class="character">Sheriff</div>
+                <div class="dialogue">Just what we need. People have been getting nervous enough already. The facility might even think they need to get involved now.</div>
+                <div class="character">Deputy Reed</div>
+                <div class="dialogue">I think they're right to be nervous. There's been too many now to call it all a coincidence.</div>
+                <div class="character">Sheriff</div>
+                <div class="dialogue">A string of bad luck doesn't make accidents into murders. Let's follow procedure and hope no one starts interfering in our work.</div>
+            </div>
+
+            <div class="links" style="margin-bottom: 15px;">
+                <a href="https://samuelgerkin.itch.io/beneath-quiet-streets/download/ePMurLIih9mhf_gbZYVW0LkEMOAi4T0flo6VXRXO" class="btn">Play Demo on itch.io</a>
+            </div>
+
+            <div class="links">
+                <a href="writing/BQS_Sheriffs_Phone.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Read: Sheriff's Phone (PDF)</a>
+                <a href="writing/BQS_Eleanors_Diary.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Read: Eleanor's Diary (PDF)</a>
+            </div>
+
+            <h3>Play the HTML Edition</h3>
+            <p>You haven&rsquo;t found all the evidence yet, but what do you suspect happened to Max Alden?</p>
+            <div class="links">
+                <a href="bqs-html-edition/index.html" class="btn">Play the HTML Edition</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Time Clash: Year One</h2>
+            <p class="tagline">A choice-based interactive story combined with a time-management simulator. Game design document, 21 pages.</p>
+            <p>The player gets to create a character and live the life of a high school student training to be a peacekeeper in a world where medieval times, modern day, and the future coexist. The player&rsquo;s choices will have consequences throughout the story &ndash; both explicit choices and their gameplay style affect the story&rsquo;s outcome.</p>
+            <ul>
+                <li><strong>Your Choices Matter.</strong> Major choices, Dialogue choices, and even Gameplay choices all factor into your story and other characters&rsquo; perceptions of you.</li>
+                <li><strong>Every Moment is a Choice.</strong> Stories will often progress with or without you. So when you have to choose between helping your friends save the school or keeping your date with your crush, choose wisely.</li>
+                <li><strong>Theme.</strong> The theme of the game is that what we do and how we spend time matters. Even the decision to not act is a decision that will have consequences. What do we really value in life? Our friends? Romantic partners? Helping strangers? Our own money or power? Or doing the right thing?</li>
+                <li><strong>Background.</strong> The player will choose whether they come from a poor, rich, or middle-class background. This will determine which students will accept the player right off the bat, and which will be prejudiced against the player.</li>
+                <li><strong>Structure.</strong> This game will use a branch and bottleneck structure, but this will be prevented from destroying lasting consequences through statistics and variables which will come back later in the story.</li>
+            </ul>
+            <div class="links">
+                <a href="writing/Time_Clash_Year_One_GDD.pdf" class="btn" target="_blank" rel="noopener">Read the Design Doc (PDF)</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Pilots</h2>
+           
+            <div class="grid">
+                <div class="card">
+                    <h3>Effect</h3>
+                    <div class="meta">TV Pilot + Series Bible · Small-town drama · 69 pages</div>
+                    <p>In a close-knit small-town community, a juvenile delinquent, a police officer, a Pastor's daughter, and a Priest must choose wisely as their lives intersect and their town is impacted by their decisions.</p>
+                    <div class="links">
+                        <a href="writing/Effect_Pilot.pdf" class="btn" target="_blank" rel="noopener">Pilot (PDF)</a>
+                        <a href="writing/Effect_Series_Bible.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Series Bible</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Strive to Survive</h3>
+                    <div class="meta">Web Series · Horror comedy · 53 pages</div>
+                    <p>Contestants on an elimination game show try to survive virtual horror movies for a multimillion-dollar prize. But there is real danger hidden in the virtual horrors...</p>
+                    <div class="links">
+                        <a href="writing/Strive_to_Survive.pdf" class="btn" target="_blank" rel="noopener">Script (PDF)</a>
+                        <a href="writing/Strive_to_Survive_Pitch.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Pitch Doc</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Time Clash</h3>
+                    <div class="meta">TV Pilot + Series Bible · Sci-fi comedy · 56 pages</div>
+                    <p>Extremely different individuals from the past, present, and future must find a way to work together to save the universe from evil creatures.</p>
+                    <div class="links">
+                        <a href="writing/Time_Clash_Pilot.pdf" class="btn" target="_blank" rel="noopener">Pilot (PDF)</a>
+                        <a href="writing/Time_Clash_Series_Bible.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Series Bible</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Short Films</h2>
+
+            <h3>The Top</h3>
+            <div class="meta">Dark corporate comedy · 8 pages · Written by Samuel Gerkin, story by Jennifer Kreisman</div>
+            <p>A contemptuous CEO jumps into the wrong car and is kidnapped by robbers.</p>
+            <div class="script" aria-label="Screenplay excerpt from The Top">
+                <div class="character">Cameron</div>
+                <div class="dialogue">You don't get to the top by caring, Mr. Walker.</div>
+                <div class="action">Cameron hangs up.</div>
+            </div>
+            <div class="links" style="margin-bottom: 30px;">
+                <a href="writing/The_Top.pdf" class="btn" target="_blank" rel="noopener">Read The Top (PDF)</a>
+            </div>
+            
+            <div class="film">
+                <h3>Free</h3>
+                <div class="meta">Relationship drama · 4 pages · Writer, director and producer</div>
+                <p>A marriage proposal reveals the unspoken secrets of a relationship.</p>
+                <div class="links">
+                    <a href="writing/Free.pdf" class="btn" target="_blank" rel="noopener">Read Script (PDF)</a>
+                </div>
+            </div>
+
+            <div class="film">
+                <h3>Value</h3>
+                <div class="meta">Social drama · 5 pages, no dialogue · Writer. Student group film directed by Amber Varnado.</div>
+                <p>When a poor woman loses a dollar, she must get it back or go hungry. </p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/4u5gaPSQUbw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="links">
+                    <a href="writing/Value.pdf" class="btn" target="_blank" rel="noopener">Read Script (PDF)</a>
+                </div>
+            </div>
+
+            <div class="film">
+                <h3>Lives of Luxury</h3>
+                <div class="meta">Psychological drama · 6 pages · Writer, director and producer</div>
+                <p>A young woman's favorite TV Show begins to take more and more of her time...</p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/bB8dU2TXxlM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="links">
+                    <a href="writing/Lives_of_Luxury.pdf" class="btn" target="_blank" rel="noopener">Read Script (PDF)</a>
+                </div>
+            </div>
+
+            <div class="film">
+                <h3>Who's Mike? A Murder Mystery</h3>
+                <div class="meta">Murder mystery · 15 minutes · Story by me, the cast improvised the dialogue under my direction.</div>
+                <p>A dinner party begins innocently enough. But one of the guests is more dangerous than they seem.</p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/2BnBMsxETC8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="project">
+            <h2>Narrative Implementation</h2>
+            <p>As a game developer as well as a storyteller, I know how to implement the systems which build a game's story as well as how to tell it.</p>
+            <ul>
+                <li><strong>The Rebirth of Franklin Albrecht</strong> (Studio Taranta): main programmer on the early demo of this psychological horror game. I built the deduction board, the candlelit alternate reality, and the Pixel Crushers Dialogue System integration. <a href="https://studio-taranta.itch.io/the-rebirth-of-franklin-albrecht">Play the demo</a>.</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <h2>Education</h2>
+            <p>I studied screenwriting with a focus on television at Arizona State University (BA, Filmmaking Practices), with coursework in screenwriting for games.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Samuel Gerkin</p>
+    </footer>
+</body>
+</html>

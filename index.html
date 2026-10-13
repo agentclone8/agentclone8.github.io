@@ -95,6 +95,33 @@
             text-decoration: none;
         }
 
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 28px;
+        }
+
+        .tabs a {
+            padding: 8px 18px;
+            border-radius: 20px;
+            color: #555;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #ddd;
+        }
+
+        .tabs a:hover {
+            border-color: #0066cc;
+            color: #0066cc;
+        }
+
+        .tabs a.active {
+            background: #0066cc;
+            border-color: #0066cc;
+            color: white;
+        }
+
         .project {
             background: white;
             padding: 30px;
@@ -300,6 +327,20 @@
             .contact a {
                 color: #4da6ff;
             }
+
+            .tabs a {
+                color: #d5d5d5;
+                border-color: #444;
+            }
+
+            .tabs a:hover {
+                color: #4da6ff;
+                border-color: #4da6ff;
+            }
+
+            .tabs a.active {
+                color: white;
+            }
         }
     </style>
 </head>
@@ -316,6 +357,10 @@
                 <a href="Resume_Samuel_Gerkin.pdf" target="_blank" rel="noopener">View</a>
                 <a href="Resume_Samuel_Gerkin.pdf" download>Download PDF</a>
             </div>
+            <nav class="tabs" aria-label="Portfolio sections">
+                <a href="index.html" class="active" aria-current="page">Programming</a>
+                <a href="writing.html">Narrative &amp; Writing</a>
+            </nav>
         </div>
     </header>
 
